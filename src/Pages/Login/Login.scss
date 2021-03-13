@@ -1,0 +1,31 @@
+.login {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  a {
+    text-decoration: none;
+    h1 {
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #bc6ff1;
+    }
+  }
+
+  .login__form {
+    max-width: 300px;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 15px;
+    padding: 1.5rem;
+    color: #fff;
+    h2 {
+      margin-bottom: 1rem;
+    }
+    input {
+      margin-bottom: 2rem;
+      width: 100%;
+      padding: 0.5rem;
+    }
+  }
+}
