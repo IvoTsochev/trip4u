@@ -13,6 +13,7 @@ const Button = styled.button`
     align-items: center;
     display: inline-flex;
     box-shadow: 5px 5px 10px #161717, -5px -5px 10px #5b5f5f;
+    cursor: pointer;
 `
 
 export {

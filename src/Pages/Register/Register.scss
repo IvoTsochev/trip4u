@@ -1,4 +1,4 @@
-.login {
+.register {
   position: absolute;
   top: 10%;
   left: 50%;
@@ -12,8 +12,8 @@
     }
   }
 
-  .login__form {
-    max-width: 300px;
+  .register__form {
+    max-width: 800px;
     width: 100%;
     border: 2px solid gray;
     border-radius: 15px;
@@ -27,6 +27,14 @@
       width: 100%;
       padding: 0.5rem;
       border-radius: 5px;
+    }
+    .register__form__email__container,
+    .register__form__password__container {
+      display: flex;
+      .register__form__email,
+      .register__form__password {
+        margin-right: 2rem;
+      }
     }
   }
 }

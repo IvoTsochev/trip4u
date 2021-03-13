@@ -1,12 +1,28 @@
 // Utils
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { auth } from '../../firebase';
 // Styling
 import './Login.scss';
-import { Button } from '../../globalStyling'
+import { Button } from '../../globalStyling';
 
 
 const Login = () => {
+    // State
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    // Sign in handler
+    const signIn = e => {
+        e.preventDefault();
+
+
+
+
+
+    }
+
+
     return (
         <div className='login'>
             <Link to='/'>
@@ -16,11 +32,11 @@ const Login = () => {
                 <h2>Sign-in</h2>
                 <form>
                     <h5>E-mail</h5>
-                    <input type="text" />
+                    <input type="text" value={email} onChange={e => setEmail(e.target.value)} />
 
                     <h5>Password</h5>
-                    <input type="password" />
-                    <Button>Sign In</Button>
+                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
+                    <Button type='submit' onClick={signIn}>Sign In</Button>
                     <p>
                         Don't have an account?
                         <Link to='/register'>Register</Link>
