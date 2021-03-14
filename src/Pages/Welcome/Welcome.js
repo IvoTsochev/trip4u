@@ -12,7 +12,6 @@ const Welcome = () => {
             <Link to='/login'>
                 <Button>Sign In with email</Button>
             </Link>
-            <Button>Guest mode</Button>
             <p>Register</p>
         </div>
     )
