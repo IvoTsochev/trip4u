@@ -9,6 +9,7 @@ import Welcome from './Pages/Welcome/Welcome';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import { auth } from './firebase';
+import UserBar from './Components/UserBar/UserBar';
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
 
   return (
     <div className="app">
+      <UserBar user={user} />
       <Switch>
 
         <Route path='/' exact>
