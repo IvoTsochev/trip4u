@@ -22,7 +22,7 @@ const Login = () => {
         auth
             .signInWithEmailAndPassword(email, password)
             .then(auth => {
-                history.push('/')
+                history.push('/main')
             })
             .catch(error => alert(error.message))
 

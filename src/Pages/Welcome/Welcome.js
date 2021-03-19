@@ -16,7 +16,7 @@ const Welcome = () => {
         <div className='welcome'>
             <h1>Trip4u</h1>
             {user ?
-                <p classname='welcome--msg'>Welcome {user.email}</p>
+                <p className='welcome--msg'>Welcome {user.email}</p>
                 :
                 (
                     <>

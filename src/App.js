@@ -2,19 +2,22 @@
 import { Route, Switch } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useStateValue } from './StateProvider';
+import { auth } from './firebase';
 // Styling
 import './App.css'
 // Components
 import Welcome from './Pages/Welcome/Welcome';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
-import { auth } from './firebase';
 import UserBar from './Components/UserBar/UserBar';
+import Profile from './Pages/Profile/Profile';
+import Main from './Pages/Main/Main'
 
 
 function App() {
 
   const [{ user }, dispatch] = useStateValue();
+
 
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
@@ -39,7 +42,7 @@ function App() {
 
   return (
     <div className="app">
-      <UserBar user={user} />
+      <UserBar />
       <Switch>
 
         <Route path='/' exact>
@@ -52,6 +55,14 @@ function App() {
 
         <Route path='/register'>
           <Register />
+        </Route>
+
+        <Route path='/profile'>
+          <Profile />
+        </Route>
+
+        <Route path='/main'>
+          <Main />
         </Route>
 
       </Switch>

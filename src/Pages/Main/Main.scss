@@ -1,0 +1,33 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .travel__me,
+  .travel__you {
+    padding: 10rem;
+    border: 1px solid rgb(73, 72, 72);
+    margin-right: 2rem;
+    text-align: center;
+    background-color: rgb(56, 53, 53);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px #161717, -5px -5px 10px #5b5f5f;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    &:hover {
+      // box-shadow: inset 5px 5px 10px #161717, -5px -5px 10px #383535;
+      border: none;
+      transform: scale(1.0225);
+    }
+    &:active {
+      box-shadow: inset 5px 5px 10px #161717, -5px -5px 10px #383535;
+    }
+    h2,
+    p {
+      color: #f57207;
+    }
+    h2 {
+      font-size: 3.5rem;
+    }
+  }
+}
