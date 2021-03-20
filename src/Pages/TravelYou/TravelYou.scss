@@ -1,0 +1,14 @@
+.travelyou {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  .travelyou__dashboard {
+    display: flex;
+    .travelyou__input {
+      flex: 50%;
+    }
+    .travelyou__map {
+      flex: 50%;
+    }
+  }
+}
