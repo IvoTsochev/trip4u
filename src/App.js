@@ -1,5 +1,5 @@
 // Utils
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
@@ -11,12 +11,16 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import UserBar from './Components/UserBar/UserBar';
 import Profile from './Pages/Profile/Profile';
-import Main from './Pages/Main/Main'
+import Main from './Pages/Main/Main';
+import TravelYou from './Pages/TravelYou/TravelYou';
 
 
 function App() {
 
   const [{ user }, dispatch] = useStateValue();
+
+
+  const location = useLocation();
 
 
   useEffect(() => {
@@ -42,7 +46,7 @@ function App() {
 
   return (
     <div className="app">
-      <UserBar />
+      <UserBar location={location} />
       <Switch>
 
         <Route path='/' exact>
@@ -63,6 +67,10 @@ function App() {
 
         <Route path='/main'>
           <Main />
+        </Route>
+
+        <Route path='/travelyou'>
+          <TravelYou />
         </Route>
 
       </Switch>

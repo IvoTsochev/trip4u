@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
 // Components
 import GoogleSignIn from '../../Components/GoogleSignIn/GoogleSignIn'
-
 // Styling
 import './Welcome.scss'
 import { Button } from '../../globalStyling';

@@ -4,13 +4,35 @@
   left: 0;
   right: 0;
   top: 0;
+  .userbar--logo {
+    a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #f57207;
+      font-size: 2rem;
+      padding: 16px;
+      text-decoration: none;
+      width: 200px;
+      transition: all 0.3s ease;
+      &:hover {
+        transform: scale(1.0225);
+      }
+    }
+  }
   p {
     color: #fff;
     text-align: right;
     cursor: pointer;
+    width: 300px;
+    margin-right: 0;
+    margin-left: auto;
     a {
       color: #fff;
       text-decoration: none;
+    }
+    span {
+      color: #f57207;
     }
   }
 }
