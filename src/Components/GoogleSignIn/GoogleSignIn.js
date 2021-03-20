@@ -1,14 +1,20 @@
 // Utils
 import React from 'react';
 import { auth, googleProvider } from '../../firebase';
+import { useHistory } from 'react-router-dom';
 // Styling
 import { Button } from '../../globalStyling';
 import './GoogleSignIn.scss';
 
 const GoogleSignIn = () => {
 
+    const history = useHistory();
+
     const signInWithGoogle = () => {
-        auth.signInWithPopup(googleProvider);
+        auth.signInWithPopup(googleProvider)
+            .then(res => {
+                history.push('/main');
+            })
     }
 
 
@@ -21,4 +27,4 @@ const GoogleSignIn = () => {
     )
 }
 
-export default GoogleSignIn
+export default GoogleSignIn;
