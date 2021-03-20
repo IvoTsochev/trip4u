@@ -8,7 +8,7 @@
     h1 {
       margin-bottom: 2rem;
       text-align: center;
-      color: #bc6ff1;
+      color: #f57207;
     }
   }
 
@@ -27,6 +27,11 @@
       width: 100%;
       padding: 0.5rem;
       border-radius: 5px;
+    }
+    p {
+      a {
+        color: #f57207;
+      }
     }
   }
 }

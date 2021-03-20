@@ -2,6 +2,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useStateValue } from '../../StateProvider';
+// Components
+import GoogleSignIn from '../../Components/GoogleSignIn/GoogleSignIn'
 
 // Styling
 import './Welcome.scss'
@@ -24,8 +26,10 @@ const Welcome = () => {
                             <Button>Sign In with email</Button>
                         </Link>
 
+                        <GoogleSignIn />
+
                         <Link to='/register'>
-                            <p>Register</p>
+                            <p className='welcome--register'>Register</p>
                         </Link>
                     </>
                 )}

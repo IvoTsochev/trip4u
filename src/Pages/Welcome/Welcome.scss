@@ -3,7 +3,7 @@
     font-family: "Poppins", sans-serif;
     font-size: 15rem;
     margin-bottom: 2rem;
-    color: #bc6ff1;
+    color: #f57207;
   }
   display: flex;
   flex-direction: column;
@@ -15,5 +15,8 @@
   transform: translate(-50%, -50%);
   p {
     color: #fff;
+  }
+  .welcome--register {
+    color: #f57207;
   }
 }
