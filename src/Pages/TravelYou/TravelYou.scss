@@ -1,11 +1,45 @@
 .travelyou {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   height: 100vh;
   .travelyou__dashboard {
     display: flex;
-    .travelyou__input {
+    .travelyou__inner {
       flex: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      p {
+        color: #f57207;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+      input {
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        padding: 0.5rem;
+        border-radius: 15px;
+        background-color: #383535;
+        color: #f57207;
+        &:focus {
+          outline: none;
+          transform: scale(1.0255);
+          box-shadow: inset 5px 5px 10px #161717, -5px -5px 10px #383535;
+        }
+      }
+      .travelyou__input {
+        display: flex;
+        .travelyou--from {
+          display: flex;
+          flex-direction: column;
+        }
+        .travelyou--to {
+          display: flex;
+          flex-direction: column;
+        }
+      }
     }
     .travelyou__map {
       flex: 50%;

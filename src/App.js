@@ -1,5 +1,5 @@
 // Utils
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation, useHistory } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useStateValue } from './StateProvider';
 import { auth } from './firebase';
@@ -21,6 +21,15 @@ function App() {
 
 
   const location = useLocation();
+
+  const history = useHistory();
+
+
+  useEffect(() => {
+    if (user) {
+      history.push('/main')
+    }
+  }, [])
 
 
   useEffect(() => {

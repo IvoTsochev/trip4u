@@ -14,12 +14,16 @@ const Button = styled.button`
     display: inline-flex;
     box-shadow: 5px 5px 10px #161717, -5px -5px 10px #5b5f5f;
     cursor: pointer;
+    transition: all .3s ease;
     &:active {
         outline: none;
+        box-shadow: inset 5px 5px 10px #161717, -5px -5px 10px #383535;
     }
     &:focus {
         outline: none;
     }
+
+
 `
 
 export {

@@ -4,6 +4,7 @@
     font-size: 15rem;
     margin-bottom: 2rem;
     color: #f57207;
+    user-select: none;
   }
   display: flex;
   flex-direction: column;
@@ -16,7 +17,10 @@
   p {
     color: #fff;
   }
-  .welcome--register {
-    color: #f57207;
+  a {
+    text-decoration: none;
+    .welcome--register {
+      color: #f57207;
+    }
   }
 }
