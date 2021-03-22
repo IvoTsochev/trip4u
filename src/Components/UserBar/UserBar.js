@@ -1,5 +1,5 @@
 // Utils
-import React, { useState } from 'react';
+import React from 'react';
 import { useStateValue } from '../../StateProvider';
 import { auth } from '../../firebase';
 import { Link, useHistory } from 'react-router-dom';
@@ -8,18 +8,15 @@ import './UserBar.scss'
 
 const UserBar = ({ location }) => {
 
-
     let logo = '';
-    if (location.pathname == '/travelyou') {
+    if (location.pathname === '/travelyou') {
         logo = 'Travel You';
-    } else if (location.pathname == '/travelme') {
+    } else if (location.pathname === '/travelme') {
         logo = 'Travel Me';
     }
 
     // State
     const [{ user }, dispatch] = useStateValue();
-
-
 
     let history = useHistory();
 
