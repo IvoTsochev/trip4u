@@ -1,5 +1,5 @@
 // Utils
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import firebase from '../../firebase';
 import { useHistory } from 'react-router-dom';
@@ -20,21 +20,26 @@ const TravelYou = () => {
     const [availableSeats, setAvailableSeats] = useState('');
     const [departureTime, setDepartureTime] = useState('');
 
+
+    console.log(departureTime);
+
     const history = useHistory();
 
     const userEmailAddress = user.email;
 
 
     // Getting current user location
-    let getGeoInfo = () => {
-        axios.get('https://ipapi.co/json')
-            .then(res => {
-                console.log(res);
-                setCountryName(res.data.country_name);
-                setCurrentCityLocation(res.data.city);
-            })
-    }
-    getGeoInfo();
+    useEffect(() => {
+        let getGeoInfo = () => {
+            axios.get('https://ipapi.co/json')
+                .then(res => {
+                    setCountryName(res.data.country_name);
+                    setCurrentCityLocation(res.data.city);
+                })
+        }
+        getGeoInfo();
+    }, [])
+
 
     // pushing state to Firebase
     let handleSubmit = () => {
@@ -42,7 +47,7 @@ const TravelYou = () => {
         const list = {
             fromCity,
             toCity,
-            phoneNumber, 
+            phoneNumber,
             availableSeats,
             departureTime,
             userEmailAddress

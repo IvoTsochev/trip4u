@@ -13,6 +13,7 @@ import UserBar from './Components/UserBar/UserBar';
 import Profile from './Pages/Profile/Profile';
 import Main from './Pages/Main/Main';
 import TravelYou from './Pages/TravelYou/TravelYou';
+import TravelMe from './Pages/TravelMe/TravelMe';
 
 
 function App() {
@@ -34,7 +35,7 @@ function App() {
 
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
-      console.log("THE USER IS >>> ", authUser);
+      // console.log("THE USER IS >>> ", authUser);
 
       if (authUser) {
         dispatch({
@@ -80,6 +81,11 @@ function App() {
 
         <Route path='/travelyou'>
           <TravelYou />
+        </Route>
+
+
+        <Route path='/travelme'>
+          <TravelMe />
         </Route>
 
       </Switch>
