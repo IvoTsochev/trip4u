@@ -1,0 +1,12 @@
+.travelmesingle {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-bottom: 1px solid #767676;
+    &:last-child {
+        border-bottom: none;
+    }
+    p {
+        text-align: center;
+        margin-top: 16px;
+    }
+}

@@ -21,11 +21,13 @@ const TravelYou = () => {
     const [departureTime, setDepartureTime] = useState('');
 
 
-    console.log(departureTime);
+
+    let displayName = user.displayName;
+    console.log(user);
+    let userEmailAddress = user.email;
 
     const history = useHistory();
 
-    const userEmailAddress = user.email;
 
 
     // Getting current user location
@@ -50,7 +52,8 @@ const TravelYou = () => {
             phoneNumber,
             availableSeats,
             departureTime,
-            userEmailAddress
+            userEmailAddress,
+            displayName
         }
 
         travelListRef.push(list);

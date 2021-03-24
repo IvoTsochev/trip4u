@@ -1,0 +1,38 @@
+.travelme {
+  height: 100vh;
+  .travelme__container {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    p {
+      color: #f57207;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .travelme__filter {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      input {
+        padding: 0.5rem;
+        border-radius: 15px;
+        background-color: #383535;
+        color: #f57207;
+        &:focus {
+          outline: none;
+          transform: scale(1.0255);
+          box-shadow: inset 5px 5px 10px #161717, -5px -5px 10px #383535;
+        }
+      }
+    }
+    .travelme__stats {
+      min-height: 200px;
+      border-radius: 15px;
+      padding: 3rem;
+      box-shadow: 5px 5px 10px #161717, -5px -5px 10px #383535;
+    }
+  }
+}

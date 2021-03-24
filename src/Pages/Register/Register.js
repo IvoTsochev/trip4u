@@ -5,17 +5,17 @@ import { auth } from '../../firebase';
 // Styling
 import './Register.scss';
 import { Button } from '../../globalStyling';
-import userEvent from '@testing-library/user-event';
 
 const Register = () => {
     // State
-    const [allInputsCorret, setAllInputsCorrect] = useState(false);
     const [email, setEmail] = useState('');
     const [confirmEmail, setConfirmEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
+    const [username, setUsername] = useState('');
 
-    const history = useHistory();
+
+    let history = useHistory();
 
 
     const register = e => {
@@ -24,10 +24,11 @@ const Register = () => {
         auth
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
-                console.log(auth);
-                if (auth) {
-                    history.push('/');
-                }
+                auth.user.updateProfile({
+                    displayName:username
+                })
+
+                history.push('/main')
             })
             .catch(error => alert(error.message))
     }
@@ -41,6 +42,12 @@ const Register = () => {
             <div className="register__form">
                 <h2>Register</h2>
                 <form>
+                    <div className="register__form__username__container">
+                        <label>
+                            <p>Username</p>
+                            <input type="text" onChange={(e) => setUsername(e.target.value)} value={username} />
+                        </label>
+                    </div>
                     <div className="register__form__email__container">
                         <div className="register__form__email">
                             <h5>E-mail</h5>
