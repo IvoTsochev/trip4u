@@ -28,7 +28,7 @@ const Register = () => {
                     displayName:username
                 })
 
-                history.push('/main')
+                history.push('/main');
             })
             .catch(error => alert(error.message))
     }

@@ -1,4 +1,12 @@
-# Getting Started with Create React App
+#How to use
+### just 'npm install'
+and then
+### 'npm start'
+
+![](demo.gif)
+
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

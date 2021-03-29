@@ -20,22 +20,12 @@ function App() {
 
   const [{ user }, dispatch] = useStateValue();
 
-
   const location = useLocation();
 
   const history = useHistory();
 
-
-  useEffect(() => {
-    if ({ user }) {
-      history.push('/main')
-    }
-  }, [])
-
-
   useEffect(() => {
     auth.onAuthStateChanged(authUser => {
-      // console.log("THE USER IS >>> ", authUser);
 
       if (authUser) {
         dispatch({
@@ -51,6 +41,14 @@ function App() {
     });
 
   }, [])
+
+
+    // redirect if user is logged in
+    useEffect(() => {
+      if ( user ) {
+        history.push('/main');
+      }
+    }, [user])
 
 
 
