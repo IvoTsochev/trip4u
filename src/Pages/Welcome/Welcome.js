@@ -13,6 +13,8 @@ const Welcome = () => {
     const [{ user }, dispatch] = useStateValue();
 
 
+
+
     return (
         <div className='welcome'>
             <h1>Trip4u</h1>
@@ -27,7 +29,7 @@ const Welcome = () => {
 
                         <GoogleSignIn />
 
-                        <Link to='/register'>
+                        <Link  to='/register'>
                             <p className='welcome--register'>Register</p>
                         </Link>
                     </>
