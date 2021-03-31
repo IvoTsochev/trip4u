@@ -1,5 +1,4 @@
 // Utils
-import React from 'react';
 import { useStateValue } from '../../StateProvider';
 import { auth } from '../../firebase';
 import { Link, useHistory } from 'react-router-dom';

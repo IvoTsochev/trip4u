@@ -1,5 +1,4 @@
 // Utils
-import React from 'react';
 import { auth, googleProvider } from '../../firebase';
 import { useHistory } from 'react-router-dom';
 // Styling

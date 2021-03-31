@@ -1,5 +1,5 @@
 // Utils
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { auth } from '../../firebase';
 // Styling

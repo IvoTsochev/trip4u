@@ -1,5 +1,5 @@
 // Utils
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import firebase from '../../firebase';
 import uuid from 'react-uuid';
 // Components
@@ -34,7 +34,8 @@ const TravelMe = () => {
                 <p>Searching for a ride...</p>
 
                 <div className="travelme__stats">
-                    {fetchedData.map(item => <TravelMeSingle 
+                    {fetchedData.map(item => 
+                    <TravelMeSingle 
                     data={item} 
                     key={uuid()}
                     />)}

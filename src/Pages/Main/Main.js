@@ -1,5 +1,4 @@
 // Utils
-import React from 'react';
 import { Link } from 'react-router-dom';
 // Styling
 import './Main.scss';

@@ -1,7 +1,5 @@
-// Utils
-import React from 'react';
 // Styling
-
+import './Profile.scss'
 
 const Profile = () => {
     return (
