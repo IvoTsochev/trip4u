@@ -21,7 +21,10 @@ const Register = () => {
     const register = e => {
         e.preventDefault();
 
-        auth
+        if ((email !== confirmEmail) || (password !== confirmPass)) {
+            alert('Please check your email addresses or passwords!')
+        } else {
+            auth
             .createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                 auth.user.updateProfile({
@@ -31,6 +34,7 @@ const Register = () => {
                 history.push('/main');
             })
             .catch(error => alert(error.message))
+        }
     }
 
 
