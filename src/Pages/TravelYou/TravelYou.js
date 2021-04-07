@@ -17,13 +17,12 @@ const TravelYou = () => {
     const [fromCity, setFromCity] = useState('');
     const [toCity, setToCity] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
-    const [availableSeats, setAvailableSeats] = useState('');
+    const [availableSeats, setAvailableSeats] = useState(1);
     const [departureTime, setDepartureTime] = useState('');
 
 
 
     let displayName = user.displayName;
-    console.log(user);
     let userEmailAddress = user.email;
 
     const history = useHistory();
@@ -60,6 +59,16 @@ const TravelYou = () => {
         history.push('/travelme');
     }
 
+
+    // Seats input validation
+    let checkSeats = (e) => {
+        if (e.target.value <= 0 || e.target.value >= 8) {
+            alert('Seats must be equal or higher than 1 and no more than 7')
+        } else {
+            setAvailableSeats(e.target.value)
+        }
+    }
+
     return (
         <div className='travelyou'>
             <div className="travelyou__dashboard">
@@ -84,7 +93,7 @@ const TravelYou = () => {
                     {/* input phone number */}
                     <input type="tel" placeholder='My phone number' onChange={(e) => setPhoneNumber(e.target.value)} value={phoneNumber} />
                     {/* input seats */}
-                    <input type="number" placeholder='Available seats' onChange={(e) => setAvailableSeats(e.target.value)} value={availableSeats} />
+                    <input type="number" placeholder='Available seats' onChange={(e) => checkSeats(e)} value={availableSeats} />
                     {/* input time departure */}
                     <label>
                         <p>Time of departure</p>
