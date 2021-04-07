@@ -7,15 +7,13 @@ import './TravelMeSingle.scss'
 const TravelMeSingle = ({ data }) => {
 
     // State
-    const [visibleControls, setVisibleControls] = useState(false);
+    // const [visibleControls, setVisibleControls] = useState(false);
     const [{ user }, dispatch] = useStateValue();
 
-    // console.log(user.email);
-    console.log(data.userEmailAddress);
 
-    if (user.email === data.userEmailAddress) {
-        setVisibleControls(true)
-    }
+    // if (user.email === data.userEmailAddress) {
+    //     setVisibleControls(true)
+    // }
 
     return (
         <div className='travelmesingle'>
@@ -38,14 +36,14 @@ const TravelMeSingle = ({ data }) => {
                 <p>{data.phoneNumber}</p>
             </div>
 
-            {visibleControls ?
+            {/* {visibleControls ?
                 <div className="travelmesingle--controls">
                     <button>Edit</button>
                     <button>Delete</button>
                 </div>
                 :
                 ''
-            }
+            } */}
 
 
 

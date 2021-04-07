@@ -80,14 +80,14 @@ const TravelYou = () => {
                             {/* input country */}
                             <input type="text" placeholder={countryName} disabled='disabled' />
                             {/* input city */}
-                            <input type="text" placeholder={currentCityLocation} onChange={(e) => setFromCity(e.target.value)} value={fromCity} />
+                            <input type="text" placeholder={`${currentCityLocation}*`} onChange={(e) => setFromCity(e.target.value)} value={fromCity} />
                         </div>
                         <div className="travelyou--to">
                             <p>To:</p>
                             {/* input country */}
                             <input type="text" placeholder={countryName} disabled='disabled' />
                             {/* input city */}
-                            <input type="text" placeholder='City' onChange={(e) => setToCity(e.target.value)} value={toCity} />
+                            <input type="text" placeholder='City*' onChange={(e) => setToCity(e.target.value)} value={toCity} />
                         </div>
                     </div>
                     {/* input phone number */}

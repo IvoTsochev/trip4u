@@ -17,12 +17,10 @@ const TravelMe = () => {
         const fetchedTravelList = firebase.database().ref('TravelList');
         fetchedTravelList.on('value', (snapshot) => {
             const data = snapshot.val();
-            console.log(data);
             const dataArr = [];
             for (let singleTravel in data) {
                 dataArr.push(data[singleTravel]);
             }
-            console.log(dataArr);
             setFetchedData(dataArr);
         })
     }, [])
