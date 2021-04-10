@@ -18,10 +18,11 @@ const TravelMe = () => {
         fetchedTravelList.on('value', (snapshot) => {
             const data = snapshot.val();
             const dataArr = [];
-            for (let singleTravel in data) {
-                dataArr.push(data[singleTravel]);
+            for (let id in data) {
+                dataArr.push({ id, ...data[id] });
             }
             setFetchedData(dataArr);
+            console.log(dataArr);
         })
     }, [])
 
@@ -32,11 +33,12 @@ const TravelMe = () => {
                 <p>Searching for a ride...</p>
 
                 <div className="travelme__stats">
-                    {fetchedData.map(item => 
-                    <TravelMeSingle 
-                    data={item} 
-                    key={uuid()}
-                    />)}
+                    {fetchedData.map(item =>
+                        <TravelMeSingle
+                            data={item}
+                            key={uuid()}
+                            id={item.id}
+                        />)}
                 </div>
             </div>
         </div>

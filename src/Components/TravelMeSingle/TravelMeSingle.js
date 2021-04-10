@@ -1,19 +1,32 @@
 // Utils
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useStateValue } from '../../StateProvider';
+import firebase from '../../firebase'
 // Styling
 import './TravelMeSingle.scss'
 
-const TravelMeSingle = ({ data }) => {
+const TravelMeSingle = ({ data, id }) => {
 
     // State
-    // const [visibleControls, setVisibleControls] = useState(false);
     const [{ user }, dispatch] = useStateValue();
+    const [visibleControls, setVisibleControls] = useState(false);
+
+    useEffect(() => {
+        checkUser()
+    }, [])
+
+    let checkUser = () => {
+        if (user.displayName === data.displayName) {
+            setVisibleControls(true)
+        }
+    }
 
 
-    // if (user.email === data.userEmailAddress) {
-    //     setVisibleControls(true)
-    // }
+    let deleteTripHandler = () => {
+        const tripRef = firebase.database().ref('TravelList').child(id);
+        tripRef.remove();
+    }
+
 
     return (
         <div className='travelmesingle'>
@@ -27,7 +40,7 @@ const TravelMeSingle = ({ data }) => {
                 <p>{data.toCity}</p>
             </div>
             <div className="travelmesingle--departuretime">
-                <p>{data.departureTime}</p>
+                <p>{data.departureTime.split('T').join(' ')}</p>
             </div>
             <div className="travelmesingle--seats">
                 <p>{data.availableSeats}</p>
@@ -36,14 +49,14 @@ const TravelMeSingle = ({ data }) => {
                 <p>{data.phoneNumber}</p>
             </div>
 
-            {/* {visibleControls ?
+            {visibleControls ?
                 <div className="travelmesingle--controls">
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    {/* <button>Edit</button> */}
+                    <p className='travelmesingle--delete' onClick={deleteTripHandler}>Delete</p>
                 </div>
                 :
                 ''
-            } */}
+            }
 
 
 

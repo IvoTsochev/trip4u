@@ -1,16 +1,25 @@
 .travelmesingle {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    border-bottom: 1px solid #767676;
-    transition: all .3s ease;
-    &:hover {
-        transform: scale(1.0225);
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid #767676;
+  transition: all 0.3s ease;
+  &:hover {
+    transform: scale(1.0225);
+  }
+  &:last-child {
+    border-bottom: none;
+  }
+  p {
+    text-align: center;
+    margin-top: 16px;
+  }
+  .travelmesingle--controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .travelmesingle--delete {
+      color: red;
+      cursor: pointer;
     }
-    &:last-child {
-        border-bottom: none;
-    }
-    p {
-        text-align: center;
-        margin-top: 16px;
-    }
+  }
 }
