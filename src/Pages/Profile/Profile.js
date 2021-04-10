@@ -9,7 +9,6 @@ const Profile = () => {
     const [{ user }, dispatch] = useStateValue();
 
     let photoUrl = '';
-
     if (user.photoURL) {
         photoUrl = user.photoURL
     } else {
@@ -19,7 +18,7 @@ const Profile = () => {
 
     return (
         <div className='profile'>
-            <h2>Dashboard</h2>
+            <h2>Profile</h2>
             <p>Username: {user.displayName}</p>
             <p>Email address: {user.email}</p>
             <p>Last login: {user.metadata.lastSignInTime}</p>

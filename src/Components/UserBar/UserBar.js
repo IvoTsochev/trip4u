@@ -18,6 +18,14 @@ const UserBar = ({ location }) => {
     const [{ user }, dispatch] = useStateValue();
 
     let history = useHistory();
+    let currentPathname = false;
+
+    if (history.location.pathname === '/profile') {
+        currentPathname = true;
+    } else {
+        currentPathname = false;
+    }
+
 
     // SING OUT FUNC
     let handleAuthentication = () => {
@@ -38,7 +46,9 @@ const UserBar = ({ location }) => {
                 user ?
                     <>
                         <p>Welcome <span>{user.email}</span></p>
-                        <p><Link to='/profile'>Profile</Link></p>
+                        <p>
+                            {!currentPathname ? (<Link to='/profile'>Profile</Link>) : (<Link to='/main'>Dashboard</Link>)}
+                        </p>
                         <p onClick={handleAuthentication}>Sign out</p>
                     </>
                     :
