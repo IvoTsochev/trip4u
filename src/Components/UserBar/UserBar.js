@@ -18,8 +18,11 @@ const UserBar = ({ location }) => {
     const [{ user }, dispatch] = useStateValue();
 
     let history = useHistory();
-    let currentPathname = false;
 
+
+    console.log(user);
+
+    let currentPathname = false;
     if (history.location.pathname === '/profile') {
         currentPathname = true;
     } else {
@@ -45,7 +48,7 @@ const UserBar = ({ location }) => {
             {
                 user ?
                     <>
-                        <p>Welcome <span>{user.email}</span></p>
+                        <p>Welcome <span>{user.displayName}</span></p>
                         <p>
                             {!currentPathname ? (<Link to='/profile'>Profile</Link>) : (<Link to='/main'>Dashboard</Link>)}
                         </p>
