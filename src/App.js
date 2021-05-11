@@ -21,6 +21,7 @@ function App() {
   const [{ user }, dispatch] = useStateValue();
 
   const location = useLocation();
+  let testVar = '';
 
   const history = useHistory();
 
